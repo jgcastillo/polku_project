@@ -19,12 +19,13 @@ services:
 
   web:
     build: .
-    command: uvicorn main:app --reload --workers 1 --host 0.0.0.0 --port 8000
+    command: uvicorn polku_backend.main:app --reload --workers 1 --host 0.0.0.0 --port 8000
     volumes:
-      - ./polku_backend:/usr/src/app
+      - .:/usr/src/app
     ports:
       - 8000:8000
     environment:
+      - PYTHONPATH=/usr/src/app
       - DATABASE_URL=postgresql+asyncpg://postgres:postgres@db:5432/polkudb
     depends_on:
       db:

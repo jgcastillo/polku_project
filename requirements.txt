@@ -7,3 +7,9 @@ greenlet==3.2.3
 sqlmodel==0.0.24
 asyncpg==0.30.0
 alembic==1.16.4
+
+# logging
+loguru==0.7.3
+
+#auth
+fastapi-users[sqlalchemy]==14.0.1
